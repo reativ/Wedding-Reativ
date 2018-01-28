@@ -1,7 +1,10 @@
 .topnav {
-  background-color: #333;
   overflow: hidden;
   position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  border-bottom: 1px solid #fff;
 }
 .topnav a {
   float: left;
@@ -23,7 +26,7 @@
 .topnav .icon {
   display: none;
 }
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 47em) {
   .topnav a:not(:first-child) {
     display: none;
   }
@@ -32,7 +35,7 @@
     display: block;
   }
 }
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 47em) {
   .topnav.responsive {
     position: relative;
   }
@@ -260,8 +263,8 @@ body {
   overflow: hidden;
 }
 .fullpage {
-  background-image: url("imgs/couple_home.jpg");
-  background-position: top right;
+  background-image: url("imgs/couple_home2.jpg");
+  background-position: top left;
   background-size: cover;
   background-attachment: fixed;
   height: 100%;
@@ -280,8 +283,8 @@ body {
   background-position: top center;
   background-image: url("http://www.wiselythemes.com/html/lilac/images/divider_1.png");
 }
-h1 {
-  position: absolute;
+.nomes {
+  position: relative;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   top: 50%;
@@ -289,13 +292,15 @@ h1 {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 60px;
-  font-size: 3.75rem;
-  color: #fff;
+  width: 50%;
+  height: 70%;
+  background-image: url("imgs/jer.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-@media only screen and (max-width: 41em) {
-  h1 {
-    color: #008000;
+@media only screen and (max-width: 47em) {
+  .nomes {
+    width: 80%;
   }
 }
