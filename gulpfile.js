@@ -6,6 +6,7 @@ var jeet            = require('jeet');
 var rupture         = require('rupture');
 var plumber         = require('gulp-plumber');
 var koutoSwiss      = require( "kouto-swiss" );
+var imagemin        = require('gulp-imagemin');
 
 gulp.task('html', function () {
     return gulp.src('./src/*.html')
@@ -17,17 +18,26 @@ gulp.task('html', function () {
 
 gulp.task('styles', function(){
 	
-	gulp.src('./src/styles/*.styl')
+	gulp.src('./src/styles/styles.styl')
 		.pipe(plumber())
 		.pipe(stylus({
 			use: [koutoSwiss(), jeet(), rupture()],
-			compress: true
+			compress: false
 		}))
 		.pipe(gulp.dest('./dist'))
 		.pipe(browserSync.stream());
 
 });
 
+/**
+ * Imagemin Task
+ */
+gulp.task('imagemin', function() {
+	return gulp.src('src/imgs/**/*')
+		.pipe(plumber())
+		.pipe(imagemin({ optimizationLevel: 4, progressive: true, interlaced: true }))
+		.pipe(gulp.dest('./dist/imgs/'));
+});
 
 
 
