@@ -3,7 +3,7 @@
 @import '_menu'
 normalize()
   
-font-size(value) {
+font-size(value) { 
 
     if (value is inherit) {
         /* do nothing, "inherit" has no unit */
@@ -38,8 +38,8 @@ html, body
   overflow hidden
   
 .fullpage
-  background-image url(imgs/couple_home.jpg)
-  background-position top right
+  background-image url(imgs/couple_home2.jpg)
+  background-position top left
   background-size cover
   background-attachment fixed
   height: 100%
@@ -58,10 +58,17 @@ html, body
     background-position: top center;
     background-image: url(http://www.wiselythemes.com/html/lilac/images/divider_1.png);
     
-h1
-  align(both)
-  text-align:center
-  font-size 60px
-  color: white
-  +below(sm)
-    color: green
+.nomes
+  position relative
+  transform-style preserve-3d
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
+  width 50%
+  height 70%
+  background-image url(imgs/jer.png)
+  background-position center
+  background-size contain
+  background-repeat no-repeat
+  +below(md)
+    width 80%
