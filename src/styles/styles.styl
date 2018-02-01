@@ -1,44 +1,162 @@
 @import "kouto-swiss"
 @import '_variables'
-@import '_menu'
 normalize()
-  
+
 font-size(value) { 
 
     if (value is inherit) {
         /* do nothing, "inherit" has no unit */
-	} else if (unit(value) is em){
-		font-size: value;
-	} else {
-		font-size: value; 
-        font-size: remify(value);
-    }
+      } else if (unit(value) is em){
+    font-size: value;
+  } else {
+    font-size: value; 
+    font-size: remify(value);
+  }
 }
 remify(value) { /* separate mixin, so it can be used elsewhere */
     u = unit(value);
 
     if (u is 'px') {
         return unit(value/16, 'rem');
-    } else {
+      } else {
         return unit(value, u);
+      }
     }
-}
 
 html, body
-	height:100%
-	font-family $font
-	color $font-color
-	box-sizing border-box //border box reset
-	
+  height:100%
+  font-family $font
+  color $font-color
+  box-sizing border-box //border box reset
+
 *, *:before, *:after 
-	box-sizing: inherit //border box reset
+  box-sizing: inherit //border box reset
+h2
+  color $primary-color
   
-.wrapper
-  position relative
-  overflow hidden
+button:focus
+  outline 0
   
-.fullpage
+.button-primary
+  border 2px solid $primary-color
+  background #fff
+  color $primary-color
+  text-decoration none
+  padding 12 24
+  display inline-block
+  transition 0.2s
+  cursor pointer
+  &:focus, &:hover
+    background $primary-color
+    color #fff
+    outline none
+  +below(md)
+    width 100%
+  // ================== Begin Navigation ======================
+.nav
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height: auto
+  color #fff
+  z-index 90
+  transition .5s
+  border-bottom 1px solid #fff
+
+
+  +below(md)
+    transform translate3d(-(1000px),0,0)
+    transition: transform 0.5s ease;
+    background $primary-color
+    height 100%
+  &.scroll
+    +above(md)
+      background $primary-color
+
+  &.showNav
+    transform translate3d(0,0,0)
+
+
+  &-menu
+    margin 0px
+    padding 0px
+
+    &-item
+      display inline-block
+      +below(md)
+        display block
+    
+      a
+        color alpha(#fff, .5)
+        letter-spacing 0.25em
+        text-decoration none
+        text-transform uppercase
+        font-weight bold
+        font-size 10px
+        transition .2s
+        display inline-block
+        position relative
+        padding 20px
+        +below(md)
+          display block
+
+        &:hover
+          color #fff
+
+        &:before, &:after
+          content ''
+          width 100%
+          height 4px
+          position absolute
+          left 0
+          bottom 0
+
+        &:after
+          background #fff
+          max-height  0
+          transition .3s
+
+        &.nav-active
+          color #fff
+
+          &:after
+            max-height  100%
+
+      span
+        display inline-block
+        position relative
+        line-height 1.25rem
+        padding 20px 0
+
+        &:before
+          font-size 20px
+          position absolute
+          left 0
+
+      &-label
+        +tablet()
+          display none
+
+
+.hamburger
+  background $primary-color
+  color #fff
+  box-shadow 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+  border-radius 50%
+  transition margin-left 250ms ease-in-out
+  position fixed
+  z-index 100
+  bottom 5%
+  right 5%
+
+  +above(lg)
+    display none
+
+// ================== End Navigation ======================
+.home
   background-image url(imgs/couple_home2.jpg)
+  background-color #000
   background-position top left
   background-size cover
   background-attachment fixed
@@ -57,7 +175,7 @@ html, body
     background-repeat: repeat-x;
     background-position: top center;
     background-image: url(http://www.wiselythemes.com/html/lilac/images/divider_1.png);
-    
+
 .nomes
   position relative
   transform-style preserve-3d
@@ -72,3 +190,23 @@ html, body
   background-repeat no-repeat
   +below(md)
     width 80%
+
+.section
+  width auto
+  max-width 85%
+  display block
+  margin-right auto
+  margin-left auto
+  padding 60px 0
+  position relative
+
+.form-control
+  display block
+  width 100%
+  padding 10px 10px
+  border: 1px solid #ccc
+  margin-top 10px
+  background #fff
+
+.contact-item
+  margin-bottom 40px

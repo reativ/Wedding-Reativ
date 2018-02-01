@@ -4,72 +4,86 @@
 
   <title>Juliana e Rafael</title>
   <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="hamburgers.css">
   <link rel="stylesheet" href="styles.css">
+
 
 </head>
 
 <body>
-<div class="wrapper">
-  <div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  <button class="hamburger hamburger--spin" type="button" id="menuIcon">
+	<span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+	</span>
+</button>
+
+  <nav id="nav" class="nav">
+
+    <ul class="nav-menu">
+      <li class="nav-menu-item"><a class="nav-active" href="#home">Início </a></li>
+      <li class="nav-menu-item"><a href="#savedate">Save the date</a></li>
+      <li class="nav-menu-item"><a href="#mapa">Mapa</a></li>
+      <li class="nav-menu-item"><a href="#confirmacao">Confirmação</a></li>
+      <li class="nav-menu-item"><a href="#lista">Lista de presentes</a></li>
+    </ul>
+  </nav>
+
+
+  <div id="fullpage">
+    <div class="home" id="home">
+      <div class="nomes"></div>
+    </div>
+
+
+    <div class="section" id="savedate">Save the date</div>
+    <div class="section" id="mapa">Mapa</div>
+    <div class="section" id="confirmacao">
+        <h2>Formulario confirmação</h2>
+        <form id="myform">
+          <div class="contact-item">
+            <label class="contact-label" for="name">Nome completo:</label>
+            <input type="text" id="name" name="from_name" class="form-control">
+
+          </div>
+          <div class="contact-item">
+            <label class="contact-label" for="email">E-mail:</label>
+            <input type="email" id="email" name="from_email" class="form-control">
+
+          </div>
+          <div class="contact-item">
+            <label class="contact-label" for="message">Mensagem:</label>
+            <textarea id="message" name="message_html" class="form-control"></textarea>
+
+          </div>
+          <div class="contact-item">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" name="pessoas" class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+          </select>
+          </div>
+          <button type="submit" class="button-primary" id="send">Enviar</button>
+        </form>
+      
+    </div>
+    <div class="section" id="lista">Lista</div>
+
+    <p id="demo"></p>
   </div>
 
-  <div class="fullpage">
-    <div class="nomes"></div>
+  <script type="text/javascript" src="/js/jquery-2.2.1.min.js"></script>
 
-  </div>
-</div>
-  <p>DASDASD</p>
-  <p>DASDASD</p>
-  <p>DASDASD</p>
-  <p id="demo"></p>
-
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
-    // Set the date we're counting down to
-    var countDownDate = new Date("Aug 11, 2018 17:00:00").getTime();
-
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-
-      // Get todays date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now an the count down date
-      var distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the result in the element with id="demo"
-      document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
-        minutes + "m " + seconds + "s ";
-
-      // If the count down is finished, write some text 
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-      }
-    }, 1000);
-
-
-    // menu -----
-
-    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
+    (function() {
+      emailjs.init("user_02Q55fCkOMDRjuaPsA4Yw");
+    })();
 
   </script>
+  <script src="/js/tools.js"></script>
+  <script src="/js/hamburgers.js"></script>
+  <script src="/js/main.js"></script>
 </body>
