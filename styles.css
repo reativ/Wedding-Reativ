@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -208,6 +209,10 @@ body {
 }
 h2 {
   color: #ebacb9;
+  font-family: 'Amatic SC', cursive;
+  font-size: 60px;
+  font-size: 3.75rem;
+  font-weight: normal;
 }
 button:focus {
   outline: 0;
@@ -236,7 +241,7 @@ button:focus {
 }
 .nav {
   position: fixed;
-  top: 0;
+  top: -60;
   left: 0;
   width: 100%;
   height: auto;
@@ -244,7 +249,7 @@ button:focus {
   z-index: 90;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  border-bottom: 1px solid #fff;
+  background: #ebacb9;
 }
 @media only screen and (max-width: 47em) {
   .nav {
@@ -255,11 +260,12 @@ button:focus {
     transition: transform 0.5s ease;
     background: #ebacb9;
     height: 100%;
+    top: 0;
   }
 }
 @media only screen and (min-width: 41em) {
   .nav.scroll {
-    background: #ebacb9;
+    top: 0;
   }
 }
 .nav.showNav {
@@ -340,9 +346,8 @@ button:focus {
   }
 }
 .hamburger {
-  background: #ebacb9;
+  background: #db6a82;
   color: #fff;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   border-radius: 50%;
   -webkit-transition: margin-left 250ms ease-in-out;
   transition: margin-left 250ms ease-in-out;
@@ -418,4 +423,8 @@ button:focus {
 }
 .contact-item {
   margin-bottom: 40px;
+}
+#map {
+  height: 400px;
+  width: 100%;
 }
