@@ -36,9 +36,13 @@
 
 
     <div class="section" id="savedate">Save the date</div>
-    <div class="section" id="mapa">Mapa</div>
+    <div class="section" id="mapa">
+    
+    <h2>Mapa</h2>
+    <div id="map"></div>
+    </div>
     <div class="section" id="confirmacao">
-        <h2>Formulario confirmação</h2>
+        <h2>Confirmação de presença</h2>
         <form id="myform">
           <div class="contact-item">
             <label class="contact-label" for="name">Nome completo:</label>
@@ -75,7 +79,22 @@
   </div>
 
   <script type="text/javascript" src="/js/jquery-2.2.1.min.js"></script>
-
+<script>
+      function initMap() {
+        var uluru = {lat: -23.186133, lng: -46.960324};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGrJgN1j9r41r_aOD_8FSshaMdn-IGUV4&callback=initMap">
+    </script>
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
     (function() {

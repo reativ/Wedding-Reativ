@@ -25,7 +25,6 @@ $(function () {
 	//Ao clicar no link o menu some
 	$('#nav li').on('click', function () {
 		$("#nav").removeClass("showNav");
-		$("#menuIcon").removeClass("is-active");
 	});
 });
 
