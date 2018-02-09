@@ -11,20 +11,25 @@ $(function () {
 		if (!target.closest('#nav').length && $('#nav').hasClass('showNav')) {
 			toggleNav();
 			$("#menuIcon").removeClass("is-active");
+          $("body").removeClass("noscroll");
 		}
 	});
 
 	function toggleNav() {
 		if ($('#nav').hasClass('showNav')) {
 			$('#nav').removeClass('showNav');
+          $('body').removeClass('noscroll');
 		} else {
 			$('#nav').addClass('showNav');
+          $('body').addClass('noscroll');
 		}
 	}
 
 	//Ao clicar no link o menu some
 	$('#nav li').on('click', function () {
 		$("#nav").removeClass("showNav");
+		$("#menuIcon").removeClass("is-active");
+      $("body").removeClass("noscroll");
 	});
 });
 
@@ -136,11 +141,11 @@ myform.submit(function (event) {
 	var messageVal = $("#message").val();
 	if (nameVal == '' || messageVal == '' || emailaddressVal == '') {
 		$(".error").remove();
-		$("#send").after('<span class="error">Por favor, preencha todos os campos.</span>');
+		$("#send").before('<span class="error">Por favor, preencha todos os campos.</span>');
 		hasError = true;
 	} else if (!emailReg.test(emailaddressVal)) {
 		$(".error").remove();
-		$("#send").after('<span class="error">Insira um e-mail válido.</span>');
+		$("#send").before('<span class="error">Insira um e-mail válido.</span>');
 		hasError = true;
 	}
 
@@ -165,5 +170,3 @@ myform.submit(function (event) {
 		});
 	return false;
 });
-
-
