@@ -22,28 +22,54 @@
     <ul class="nav-menu">
       <li class="nav-menu-item"><a class="nav-active" href="#home">Início </a></li>
       <li class="nav-menu-item"><a href="#savedate">Save the date</a></li>
-      <li class="nav-menu-item"><a href="#mapa">Mapa</a></li>
       <li class="nav-menu-item"><a href="#confirmacao">Confirmação</a></li>
       <li class="nav-menu-item"><a href="#lista">Lista de presentes</a></li>
+      <li class="nav-menu-item"><a href="#mapa">Mapa</a></li>
+      
     </ul>
   </nav>
 
 
   <div id="fullpage">
     <div class="home" id="home">
-     <div class="mask"></div>
+      <div class="mask"></div>
       <div class="nomes">
         <img src="imgs/jer.png" alt="">
-        <div class="data">18 de agosto . 2018 . 17h</div>
+
       </div>
-      
+
     </div>
 
 
-    <div class="section-margin" id="savedate">Save the date</div>
-
+    <div class="section-margin" id="savedate">
+      <h2>Save the date</h2>
+      <div class="data">11 de agosto de 2018</div>
+      <div class="countdown-row">
+        <span class="countdown-section">
+        <span  id="dias" class="countdown-amount"></span>
+        <span class="countdown-period">Dias</span>
+        </span>
+        
+        <span class="countdown-section">
+        <span  id="horas" class="countdown-amount"></span>
+        <span class="countdown-period">Horas</span>
+        </span>
+        
+        <span class="countdown-section">
+        <span  id="minutos" class="countdown-amount"></span>
+        <span class="countdown-period">Minutos</span>
+        </span>
+        
+        <span class="countdown-section">
+        <span  id="segundos" class="countdown-amount"></span>
+        <span class="countdown-period">Segundos</span>
+        </span>
+      </div>
+      
+    </div>
+<div class="rsvp">
     <div class="section-margin" id="confirmacao">
-      <h2>Confirmação de presença</h2>
+      <h2>Confirmação</h2>
       <form id="myform">
         <div class="contact-item">
           <label class="contact-label" for="name">Nome completo:</label>
@@ -74,12 +100,15 @@
       </form>
 
     </div>
-    <div class="section-margin" id="lista">Lista</div>
-        <div id="mapa">
-      <h2 class="section-margin">Mapa</h2>
+ </div>   
+    
+    <div class="section-margin" id="lista">
+    <h2>Lista de presentes</h2></div>
+    <div id="mapa">
+      <h2>Mapa</h2>
       <div id="map"></div>
     </div>
-    <p id="demo"></p>
+
   </div>
 
   <script type="text/javascript" src="/js/jquery-2.2.1.min.js"></script>

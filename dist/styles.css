@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -198,7 +199,7 @@ template {
 html,
 body {
   height: 100%;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #5f5f5f;
   box-sizing: border-box;
 }
@@ -213,20 +214,40 @@ body.noscroll {
 }
 h2,
 .nav:before {
-  color: #ebacb9;
-  font-family: 'Amatic SC', cursive;
+  color: #4a4a4a;
+  font-family: 'Great Vibes', cursive;
   font-size: 60px;
   font-size: 3.75rem;
   text-align: center;
   font-weight: normal;
+  position: relative;
+  padding-bottom: 20px;
+}
+h2:before {
+  content: "";
+  width: 24%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 38%;
+  background: rgba(0,0,0,0.1);
+}
+h2:after {
+  content: "";
+  width: 10%;
+  height: 3px;
+  position: absolute;
+  bottom: -1;
+  left: 45%;
+  background: rgba(0,0,0,0.2);
 }
 button:focus {
   outline: 0;
 }
 .button-primary {
-  border: 2px solid #ebacb9;
+  border: 2px solid #4a4a4a;
   background: #fff;
-  color: #ebacb9;
+  color: #4a4a4a;
   text-decoration: none;
   padding: 12 24;
   display: inline-block;
@@ -236,7 +257,7 @@ button:focus {
 }
 .button-primary:focus,
 .button-primary:hover {
-  background: #ebacb9;
+  background: #4a4a4a;
   color: #fff;
   outline: none;
 }
@@ -251,7 +272,7 @@ button:focus {
   left: 0;
   width: 100%;
   height: auto;
-  color: #ebacb9;
+  color: #4a4a4a;
   z-index: 90;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -302,6 +323,7 @@ button:focus {
 .nav-menu {
   margin: 0px;
   padding: 0px;
+  text-align: center;
 }
 .nav-menu-item {
   display: inline-block;
@@ -309,15 +331,15 @@ button:focus {
 @media only screen and (max-width: 47em) {
   .nav-menu-item {
     display: block;
-    border-bottom: 1px solid rgba(235,172,185,0.3);
+    border-bottom: 1px solid rgba(74,74,74,0.3);
     margin: 0 30px;
   }
   .nav-menu-item:first-child {
-    border-top: 1px solid rgba(235,172,185,0.3);
+    border-top: 1px solid rgba(74,74,74,0.3);
   }
 }
 .nav-menu-item a {
-  color: rgba(235,172,185,0.5);
+  color: rgba(74,74,74,0.5);
   letter-spacing: 0.25em;
   text-decoration: none;
   text-transform: uppercase;
@@ -333,17 +355,17 @@ button:focus {
 @media only screen and (max-width: 47em) {
   .nav-menu-item a {
     display: block;
-    color: rgba(235,172,185,0.6);
+    color: rgba(74,74,74,0.6);
     text-align: center;
     padding: 30px;
   }
 }
 .nav-menu-item a:hover {
-  color: #ebacb9;
+  color: #4a4a4a;
 }
 @media only screen and (max-width: 47em) {
   .nav-menu-item a:hover {
-    color: #ebacb9;
+    color: #4a4a4a;
   }
 }
 .nav-menu-item a:before,
@@ -362,8 +384,8 @@ button:focus {
   transition: 0.3s;
 }
 .nav-menu-item a.nav-active {
-  color: #ebacb9;
-  border-bottom: 4px solid #ebacb9;
+  color: #4a4a4a;
+  border-bottom: 4px solid #4a4a4a;
 }
 .nav-menu-item a.nav-active:after {
   max-height: 100%;
@@ -386,7 +408,7 @@ button:focus {
   }
 }
 .hamburger {
-  background: #db6a82;
+  background: #3b3b3b;
   color: #fff;
   border-radius: 50%;
   -webkit-transition: margin-left 250ms ease-in-out;
@@ -403,34 +425,20 @@ button:focus {
 }
 .home {
   background-image: url("imgs/foto1.jpg");
-  background-color: #000;
   background-position: top left;
   background-size: cover;
   background-attachment: fixed;
   height: 100%;
-  padding-bottom: 100px;
   position: relative;
   box-sizing: content-box;
-}
-.home:after {
-  content: "";
-  width: 100%;
-  height: 241px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-repeat: repeat-x;
-  background-position: top center;
-  background-image: url("http://www.wiselythemes.com/html/lilac/images/divider_1.png");
 }
 .mask {
   background: #000;
   height: 100%;
   width: 100%;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
-  opacity: 0.5;
-  padding-bottom: 100px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  opacity: 0.2;
 }
 .nomes {
   width: 100%;
@@ -442,25 +450,19 @@ button:focus {
 }
 .nomes img {
   width: 30%;
-  position: relative;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 @media only screen and (max-width: 47em) {
   .nomes img {
     width: 80%;
   }
-}
-.data {
-  text-align: center;
-  color: #fff;
-  text-transform: uppercase;
-  display: block;
-  margin-top: 10px;
-  letter-spacing: 4px;
-  padding-top: 20px;
 }
 .section-margin {
   width: auto;
@@ -468,7 +470,7 @@ button:focus {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding: 120px 0 0 0;
+  padding: 80px 0;
   position: relative;
 }
 .form-control {
@@ -499,8 +501,52 @@ button:focus {
     text-align: center;
   }
 }
-#demo {
-  font-size: 40px;
-  font-size: 2.5rem;
+.data {
   text-align: center;
+  display: block;
+  letter-spacing: 3px;
+}
+.countdown-row {
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+.countdown-section {
+  display: inline-block;
+  position: relative;
+  margin: 0 10px;
+  padding: 10px 15px;
+  padding-top: 18px;
+  border-radius: 50px;
+}
+.countdown-section:before {
+  content: " : ";
+  display: inline-block;
+  margin: 0 0 0 -15px;
+  position: absolute;
+  left: 0;
+  font-size: 35px;
+  font-size: 2.1875rem;
+}
+.countdown-section:first-child:before {
+  content: "";
+}
+.countdown-amount {
+  font-size: 35px;
+  font-size: 2.1875rem;
+  font-weight: bold;
+}
+.countdown-period {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  text-transform: lowercase;
+  font-size: 22px;
+  font-size: 1.375rem;
+  color: #9c5b76;
+}
+.rsvp {
+  background-image: url("imgs/foto2.jpg");
+  background-position: top left;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
 }
