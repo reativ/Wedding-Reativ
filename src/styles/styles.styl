@@ -165,25 +165,24 @@ button:focus
           +below(md)
             color $primary-color
 
-        &:before, &:after
+        &:after
           content ''
           width 100%
-          height 4px
+          height 0px
           position absolute
           left 0
           bottom 0
-
-        &:after
-          background #fff
-          max-height  0
           transition .3s
 
         &.nav-active
           color $primary-color
-          border-bottom 4px solid $primary-color
+          +below(md)
+            background alpha($accent-color, .2)
+          
 
           &:after
-            max-height  100%
+            height  4px
+            background $accent-color
 
       span
         display inline-block
@@ -216,8 +215,8 @@ button:focus
 
 // ================== End Navigation ======================
 .home
-  background-image url(imgs/foto1.jpg)
-  background-position top left
+  background-image url(imgs/couple_home.jpg)
+  background-position bottom left
   background-size cover
   background-attachment fixed
   height: 100%
@@ -229,6 +228,9 @@ button:focus
   height 100%
   width 100%
   opacity .2
+  position absolute
+  top 0
+  left 0
 .nomes
   width 100%
   position: absolute
@@ -314,8 +316,6 @@ button:focus
     color $accent-color
     
 .rsvp
-  background-image url(imgs/foto2.jpg)
-  background-position top left
-  background-size cover
-  background-attachment fixed
+  background $accent-color
   position: relative
+
