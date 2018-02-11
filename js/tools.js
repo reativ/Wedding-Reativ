@@ -92,7 +92,7 @@ $(document).ready(function () {
 	} // this for loop fills the aArray with attribute href values
 
 	$(window).scroll(function () {
-		var windowPos = $(window).scrollTop() + 200; // get the offset of the window from the top of page
+		var windowPos = $(window).scrollTop() + 100; // get the offset of the window from the top of page
 		var windowHeight = $(window).height(); // get the height of the window
 		var docHeight = $(document).height();
 
@@ -120,7 +120,7 @@ $(document).ready(function () {
 // Muda cor menu ======================================================
 window.onscroll = () => {
   const nav = document.querySelector('#nav');
-  if(this.scrollY <= 10) nav.className = 'nav'; else nav.className = 'nav scroll';
+  if(this.scrollY <= 100) nav.className = 'nav'; else nav.className = 'nav scroll';
 };
 
 // Formulario de contato =====================================================

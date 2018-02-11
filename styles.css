@@ -232,6 +232,12 @@ h2:before {
   left: 38%;
   background: rgba(0,0,0,0.1);
 }
+@media only screen and (max-width: 47em) {
+  h2:before {
+    width: 72%;
+    left: 14%;
+  }
+}
 h2:after {
   content: "";
   width: 10%;
@@ -241,6 +247,15 @@ h2:after {
   left: 45%;
   background: rgba(0,0,0,0.2);
 }
+@media only screen and (max-width: 47em) {
+  h2:after {
+    width: 28%;
+    left: 36%;
+  }
+}
+input:focus,
+select:focus,
+textarea:focus,
 button:focus {
   outline: 0;
 }
@@ -268,7 +283,7 @@ button:focus {
 }
 .nav {
   position: fixed;
-  top: -60;
+  top: -80;
   left: 0;
   width: 100%;
   height: auto;
@@ -327,6 +342,7 @@ button:focus {
 }
 .nav-menu-item {
   display: inline-block;
+  margin: 10px 5px;
 }
 @media only screen and (max-width: 47em) {
   .nav-menu-item {
@@ -343,14 +359,14 @@ button:focus {
   letter-spacing: 0.25em;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   display: inline-block;
   position: relative;
-  padding: 20px;
+  padding: 15px 20px;
+  border: 1px solid #fff;
 }
 @media only screen and (max-width: 47em) {
   .nav-menu-item a {
@@ -361,34 +377,20 @@ button:focus {
   }
 }
 .nav-menu-item a:hover {
-  color: #4a4a4a;
-}
-@media only screen and (max-width: 47em) {
-  .nav-menu-item a:hover {
-    color: #4a4a4a;
-  }
-}
-.nav-menu-item a:after {
-  content: '';
-  width: 100%;
-  height: 0px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  color: #442529;
 }
 .nav-menu-item a.nav-active {
-  color: #4a4a4a;
+  color: #442529;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  border-radius: 10px;
 }
 @media only screen and (max-width: 47em) {
   .nav-menu-item a.nav-active {
-    background: rgba(156,91,118,0.2);
+    background: rgba(68,37,41,0.1);
+    border-radius: 0;
+    border: 0;
   }
-}
-.nav-menu-item a.nav-active:after {
-  height: 4px;
-  background: #9c5b76;
 }
 .nav-menu-item span {
   display: inline-block;
@@ -433,12 +435,12 @@ button:focus {
   box-sizing: content-box;
 }
 .mask {
-  background: #000;
+  background: #442529;
   height: 100%;
   width: 100%;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-  filter: alpha(opacity=20);
-  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: 0.5;
   position: absolute;
   top: 0;
   left: 0;
@@ -473,19 +475,24 @@ button:focus {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding: 80px 0;
+  padding: 60px 0 80px 0;
   position: relative;
 }
 .form-control {
   display: block;
   width: 100%;
   padding: 10px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   margin-top: 10px;
-  background: #fff;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+option {
+  background: #442529;
 }
 .contact-item {
   margin-bottom: 40px;
+  color: rgba(255,255,255,0.8);
 }
 #map {
   height: 400px;
@@ -508,18 +515,39 @@ button:focus {
   text-align: center;
   display: block;
   letter-spacing: 3px;
+  font-size: 20px;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 47em) {
+  .data {
+    font-size: 16px;
+    font-size: 1rem;
+  }
 }
 .countdown-row {
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 10px 0 20px 0;
+}
+.countdown-row:before,
+.countdown-row:after {
+  content: " ";
+  display: table;
+}
+.countdown-row:after {
+  clear: both;
 }
 .countdown-section {
   display: inline-block;
   position: relative;
   margin: 0 10px;
-  padding: 10px 15px;
-  padding-top: 18px;
+  padding: 10px;
   border-radius: 50px;
+}
+@media only screen and (max-width: 47em) {
+  .countdown-section {
+    margin: 0;
+  }
 }
 .countdown-section:before {
   content: " : ";
@@ -527,15 +555,20 @@ button:focus {
   margin: 0 0 0 -15px;
   position: absolute;
   left: 0;
-  font-size: 35px;
-  font-size: 2.1875rem;
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+@media only screen and (max-width: 47em) {
+  .countdown-section:before {
+    margin: 0;
+  }
 }
 .countdown-section:first-child:before {
   content: "";
 }
 .countdown-amount {
-  font-size: 35px;
-  font-size: 2.1875rem;
+  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 .countdown-period {
@@ -544,9 +577,38 @@ button:focus {
   text-transform: lowercase;
   font-size: 22px;
   font-size: 1.375rem;
-  color: #9c5b76;
+  color: #442529;
 }
 .rsvp {
-  background: #9c5b76;
+  background-color: #442529;
+  background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
   position: relative;
+}
+.rsvp:before {
+  content: "";
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: -webkit-linear-gradient(top,#2f191c,transparent 50%);
+  background-image: -moz-linear-gradient(top,#2f191c,transparent 50%);
+  background-image: -ms-linear-gradient(top,#2f191c,transparent 50%);
+  background-image: -o-linear-gradient(top,#2f191c,transparent 50%);
+  background-image: linear-gradient(to bottom,#2f191c,transparent 50%);
+}
+.rsvp h2 {
+  color: #fff;
+}
+.rsvp h2:before {
+  background: rgba(255,255,255,0.2);
+}
+.rsvp h2:after {
+  background: rgba(255,255,255,0.3);
+}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
