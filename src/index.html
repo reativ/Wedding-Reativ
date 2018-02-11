@@ -32,6 +32,7 @@
 
   <div id="fullpage">
     <div class="home" id="home">
+    <div id="particles-js"></div>
       <div class="mask"></div>
       <div class="nomes">
         <img src="imgs/jer.png" alt="">
@@ -67,9 +68,8 @@
       </div>
       
     </div>
-<div class="rsvp">
-   <div class="mask"></div>
-    <div class="section-margin" id="confirmacao">
+<div class="rsvp" id="confirmacao">
+    <div class="section-margin">
       <h2>Confirmação</h2>
       <form id="myform">
         <div class="contact-item">
@@ -83,12 +83,7 @@
 
         </div>
         <div class="contact-item">
-          <label class="contact-label" for="message">Mensagem:</label>
-          <textarea id="message" name="message_html" class="form-control"></textarea>
-
-        </div>
-        <div class="contact-item">
-          <label for="exampleFormControlSelect1">Example select</label>
+          <label for="exampleFormControlSelect1">Número de pessoas</label>
           <select class="form-control" name="pessoas" class="form-control">
                   <option>1</option>
                   <option>2</option>
@@ -97,6 +92,12 @@
                   <option>5</option>
           </select>
         </div>
+        <div class="contact-item">
+          <label class="contact-label" for="message">Mensagem:</label>
+          <textarea id="message" name="message_html" class="form-control"></textarea>
+
+        </div>
+        
         <button type="submit" class="button-primary" id="send">Enviar</button>
       </form>
 
@@ -114,11 +115,6 @@
       <h2>Mapa</h2>
       <div id="map"></div>
     </div>
-    <section class="col-3 ss-style-doublediagonal">
-    <div class="column">
-        <p>slanted</p>
-    </div>
-</section>
 
   </div>
 
@@ -154,4 +150,6 @@
   <script src="/js/tools.js"></script>
   <script src="/js/hamburgers.js"></script>
   <script src="/js/main.js"></script>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
 </body>

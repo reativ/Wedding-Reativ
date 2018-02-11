@@ -50,6 +50,9 @@ h2:before
   bottom 0
   left 38%
   background alpha(#000, .1)
+  +below(md)
+    width 72%
+    left 14%
   
 h2:after
   content ""
@@ -59,10 +62,13 @@ h2:after
   bottom -1
   left 45%
   background alpha(#000, .2)
+  +below(md)
+    width 28%
+    left 36%
   
       
   
-button:focus
+input:focus, select:focus, textarea:focus, button:focus
   outline 0
   
 .button-primary
@@ -83,7 +89,7 @@ button:focus
   // ================== Begin Navigation ======================
 .nav
   position fixed
-  top -60
+  top -80
   left 0
   width 100%
   height: auto
@@ -136,6 +142,7 @@ button:focus
 
     &-item
       display inline-block
+      margin 10px 5px
       +below(md)
         display block
         border-bottom 1px solid alpha($primary-color, .3)
@@ -148,12 +155,12 @@ button:focus
         letter-spacing 0.25em
         text-decoration none
         text-transform uppercase
-        font-weight bold
-        font-size 12px
+        font-size 10px
         transition .2s
         display inline-block
         position relative
-        padding 20px
+        padding 15px 20px
+        border 1px solid #fff
         +below(md)
           display block
           color alpha($primary-color, .6)
@@ -161,28 +168,18 @@ button:focus
           padding 30px
 
         &:hover
-          color $primary-color
-          +below(md)
-            color $primary-color
-
-        &:after
-          content ''
-          width 100%
-          height 0px
-          position absolute
-          left 0
-          bottom 0
-          transition .3s
+          color $accent-color
 
         &.nav-active
-          color $primary-color
+          color $accent-color
+          border 1px solid #ccc
+          font-weight bold
+          border-radius 10px
           +below(md)
-            background alpha($accent-color, .2)
-          
+            background alpha($accent-color, .1)
+            border-radius 0
+            border 0
 
-          &:after
-            height  4px
-            background $accent-color
 
       span
         display inline-block
@@ -222,12 +219,13 @@ button:focus
   height: 100%
   position: relative
   box-sizing content-box
+  
 
 .mask
-  background #000
+  background $accent-color
   height 100%
   width 100%
-  opacity .2
+  opacity .5
   position absolute
   top 0
   left 0
@@ -250,19 +248,24 @@ button:focus
   display block
   margin-right auto
   margin-left auto
-  padding 80px 0
+  padding 60px 0 80px 0
   position relative
 
 .form-control
   display block
   width 100%
   padding 10px 10px
-  border: 1px solid #ccc
+  border: 1px solid #fff
   margin-top 10px
-  background #fff
+  background alpha(#fff, .1)
+  color #fff
+  
+option
+  background $accent-color
 
 .contact-item
   margin-bottom 40px
+  color alpha(#fff, .8)
   
 #map
   height 400px
@@ -283,30 +286,39 @@ button:focus
   text-align center
   display block
   letter-spacing 3px
+  font-size 20px
+  text-transform uppercase
+  +below(md)
+    font-size 16px
   
   
 .countdown
   &-row
     text-align center
-    margin 0 0 20px 0
+    margin 10px 0 20px 0
+    clearfix()
   &-section
     display inline-block
     position relative
     margin 0 10px
-    padding 10px 15px
-    padding-top 18px
+    padding 10px
     border-radius 50px
+    +below(md)
+      margin 0
     &:before
       content: " : "
       display: inline-block
       margin: 0 0 0 -15px
       position: absolute
       left: 0;
-      font-size 35px
+      font-size 22px
+      +below(md)
+        margin 0
     &:first-child:before
       content ""
+    
   &-amount
-    font-size 35px
+    font-size 24px
     font-weight bold
   &-period
     display block
@@ -316,6 +328,29 @@ button:focus
     color $accent-color
     
 .rsvp
-  background $accent-color
+  background-color $accent-color
+  background-image: url("https://www.transparenttextures.com/patterns/brilliant.png")
   position: relative
+  
+  &:before
+    content ""
+    width 100%
+    height 100px
+    position absolute
+    top 0
+    left 0
+    background-image: linear-gradient( to bottom, #2f191c, transparent 50%)
+    
+  & h2
+    color #fff
+    &:before
+      background alpha(#fff, .2)
+    &:after
+      background alpha(#fff, .3)
+
+#particles-js
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index 1
 
