@@ -287,14 +287,14 @@ button:focus {
   }
 }
 .btn-primary {
-  border: 0;
-  background: #fff;
-  color: #4a4a4a;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
 }
 .btn-primary:focus,
 .btn-primary:hover {
-  background: #b75562;
-  color: #fff;
+  background: #fff;
+  color: #442529;
 }
 .btn-secondary {
   border: 1px solid #442529;
