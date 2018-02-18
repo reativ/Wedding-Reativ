@@ -8,7 +8,6 @@ html, body
   height:100%
   font-family $font
   color $font-color
-  background #faf8f8
   box-sizing border-box //border box reset
   &.noscroll
     overflow hidden
@@ -16,7 +15,7 @@ html, body
 *, *:before, *:after 
   box-sizing: inherit //border box reset
 h2
-  color $primary-color
+  color $accent-color
   font-family $cursive-font
   font-size 60px
   text-align center
@@ -48,28 +47,42 @@ h2:after
     width 28%
     left 36%
   
-
+h3
+  color $accent-color
+  
 input:focus, select:focus, textarea:focus, button:focus
   outline 0
   
   
 //=== Base items =======================================================
   
-.button-primary
-  border 2px solid $primary-color
-  background #fff
-  color $primary-color
+.btn
+  border-radius 50px
   text-decoration none
   padding 12 24
   display inline-block
   transition 0.2s
   cursor pointer
   &:focus, &:hover
-    background $primary-color
-    color #fff
     outline none
   +below(md)
     width 100%
+    
+  &-primary
+    border 0
+    background #fff
+    color $primary-color
+    &:focus, &:hover
+      background #b75562
+      color #fff
+      
+  &-secondary
+    border 1px solid $accent-color
+    background #fff
+    color $primary-color
+    &:focus, &:hover
+      background $accent-color
+      color #fff
     
 .section-margin
   width auto
@@ -102,6 +115,9 @@ input:focus, select:focus, textarea:focus, button:focus
     transition: transform 0.5s ease;
     height 100%
     top 0
+    background-image: url(../imgs/flores.png);
+    background-position bottom left
+    background-repeat no-repeat
     &:before
       content "Menu"
       @extend h2
@@ -113,17 +129,6 @@ input:focus, select:focus, textarea:focus, button:focus
       top 0
       left 0
       
-    &:after
-      content ""
-      width 100%
-      height 140px
-      position absolute
-      bottom 0
-      left 0
-      background-repeat: no-repeat;
-      background-position: top left;
-      background-size cover
-      background-image: url(../imgs/flores.png);
 
   &.scroll
     top 0
@@ -157,10 +162,10 @@ input:focus, select:focus, textarea:focus, button:focus
         display inline-block
         position relative
         padding 15px 20px
-        border 1px solid #fff
+        +above(md)
+          border 1px solid #fff
         +below(md)
           display block
-          color alpha($primary-color, .6)
           text-align center
           padding 30px
 
@@ -171,17 +176,17 @@ input:focus, select:focus, textarea:focus, button:focus
           color $accent-color
           border 1px solid #ccc
           font-weight bold
-          border-radius 10px
+          border-radius 50px
           +below(md)
-            background alpha($accent-color, .1)
             border-radius 0
             border 0
 
 
 
 .hamburger
-  background $primary-color - 20%
-  color #fff
+  background $accent-color
+  color red
+  border 1px solid alpha(#fff, 30%)
   border-radius 50%
   transition margin-left 250ms ease-in-out
   position fixed
@@ -201,8 +206,9 @@ input:focus, select:focus, textarea:focus, button:focus
   height: 100%
   position: relative
   box-sizing content-box
+  overflow hidden
   &:before
-    @extend .shadow-down
+    shadow-down(rgba(0, 0, 0, 0.3))
   
 
 .mask
@@ -254,7 +260,6 @@ input:focus, select:focus, textarea:focus, button:focus
     position relative
     margin 0 10px
     padding 10px
-    border-radius 50px
     +below(md)
       margin 0
     &:before
@@ -282,13 +287,16 @@ input:focus, select:focus, textarea:focus, button:focus
 
 //==== RSVP =======================================================
 
-.rsvp
+.accent-bg
   background-color $accent-color
   background-image: url("https://www.transparenttextures.com/patterns/brilliant.png")
   position: relative
   
   &:before
-    @extend .shadow-top
+    shadow-top(#2f191c)
+    
+  &:after
+    shadow-down(#2f191c)
     
   & h2
     color #fff
@@ -300,11 +308,15 @@ input:focus, select:focus, textarea:focus, button:focus
 .form-control
   display block
   width 100%
-  padding 10px 10px
-  border: 1px solid #fff
+  padding 14px 20px
+  border: 1px solid alpha(#fff, 30%)
   margin-top 10px
   background alpha(#fff, .1)
   color #fff
+  border-radius 50px
+  transition .2s
+  &:focus
+    border-color #fff
   
 option
   background $accent-color
@@ -315,6 +327,7 @@ option
   display block
   margin-bottom 20px
   border solid 1px #fa4040
+  border-radius 50px
   background alpha(#000, .2)
   +below(md)
     text-align center
@@ -330,26 +343,34 @@ option
     line-height 1.5rem
     
   &-row
-    margin-top 40px
+    margin-top 60px
     clearfix()
+    +above(md)
+      padding 0 80px
     
   &-card
-    column(1/3, $cycle: 3)
+    column(1/2, $cycle: 2, $gutter: 5)
     margin-bottom 20px
     transition: all 0.6s cubic-bezier(.25,.8,.25,1);
     background #fff
+    border-radius: 10px
+    box-shadow: 0 1px 25px rgba(0, 0, 0, 0.1);
     +below(md)
       stack()
       
     &:hover
-      box-shadow: 0 5px 30px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+      & img
+        opacity 1
       
     & img
       max-width 100%
-      height 150px
-      padding 30px
+      height 180px
+      padding 40px 60px
       display block
       margin 0 auto
+      opacity .8
+      transition .4s
     
     
   
@@ -360,15 +381,40 @@ option
 #map
   height 400px
   width 100%
-  border-radius 10px
-  box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.10)
+
   
 .map
   &-row
-    clearfix()
+    padding-bottom 30px
+    +above(md)
+      padding-bottom 60px
+      padding-top 10px
     
-  &-section
-    column(1/2, $cycle: 2)
+  &-section-map
+    
+    +above(md)
+      width 80%
+      padding-top 40px
+    
+  &-section-adress
+    background #fff
+    padding 30px
+    text-align center
+    border-radius: 10px
+    margin-bottom 10px
+    +above(md)
+      width 40%
+      box-shadow: 0 1px 25px rgba(0, 0, 0, 0.1);
+      position absolute
+      right 0
+      z-index 1
+      
+    
+.adress
+  display block
+  line-height: 25px
+  padding-bottom: 40px
+
 
     
 

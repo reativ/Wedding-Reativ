@@ -34,7 +34,7 @@
     <div class="home" id="home">
     <div id="particles-js"></div>
       <div class="mask"></div>
-      <div class="nomes">
+      <div class="nomes" data-paroller-factor="0.2">
         <img src="imgs/jer.png" alt="">
 
       </div>
@@ -46,7 +46,7 @@
       <h2>Save the date</h2>
       <div class="data">11 de agosto de 2018</div>
       <div class="countdown-row">
-        <span class="countdown-section">
+        <span class="countdown-section" >
         <span  id="dias" class="countdown-amount"></span>
         <span class="countdown-period">Dias</span>
         </span>
@@ -68,7 +68,7 @@
       </div>
       
     </div>
-<div class="rsvp" id="confirmacao">
+<div class="accent-bg" id="confirmacao">
     <div class="section-margin">
       <h2>Confirmação</h2>
       <form id="myform">
@@ -98,7 +98,7 @@
 
         </div>
         
-        <button type="submit" class="button-primary" id="send">Enviar</button>
+        <button type="submit" class="btn btn-primary" id="send">Enviar</button>
       </form>
 
     </div>
@@ -119,57 +119,36 @@
       
       
       <div class="gift-card">
-      <a href="https://www.americanas.com.br/" target="_blank">
-      <img src="imgs/americanas.svg" alt="americanas">
+      <a href="https://www.fastshop.com.br/loja/" target="_blank">
+      <img src="imgs/fast.svg" alt="Fast Shop">
       </a></div>
-      
-      <div class="gift-card">
-      <a href="https://www.pontofrio.com.br/" target="_blank">
-      <img src="imgs/pontofrio.svg" alt="Ponto Frio">
-      </a></div>
+
       
     </div>
     
     
     
     </div>
+    <div class="accent-bg">
     <div class="section-margin" id="mapa">
-      <h2>Mapa</h2>
+      <h2>Localização</h2>
       <div class="map-row">
-        <div class="map-section"><div id="map"></div></div>
-        <div class="map-section">
+        
+        <div class="map-section-adress" data-paroller-factor="0.1">
         <h3>Buffet Malavazzi</h3>
-        <span>R. André Pellizzari, 1253 - Jardim das Tulipas, Jundiaí - SP, 13213-246</span>
-        <a href="https://waze.com/ul?preview_venue_id=205129249.2051489093.6611726" target="_blank" class="button-primary">Waze</a>
+        <span class="adress">R. André Pellizzari, 1253 - Jardim das Tulipas, Jundiaí - SP, 13213-246</span>
+        <a href="https://waze.com/ul?preview_venue_id=205129249.2051489093.6611726" target="_blank" class="btn btn-secondary">Abrir no Waze</a>
         </div>
+        
+        <div class="map-section-map" data-paroller-factor="0.2"><div id="map"></div></div>
       </div>
       
     </div>
-
+</div>
   </div>
 
   <script type="text/javascript" src="/js/jquery-2.2.1.min.js"></script>
-  <script>
-    function initMap() {
-      var uluru = {
-        lat: -23.186133,
-        lng: -46.960324
-      };
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
-        center: uluru
-      });
-      var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-      });
-    }
-
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGrJgN1j9r41r_aOD_8FSshaMdn-IGUV4&callback=initMap">
-
-
-  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGrJgN1j9r41r_aOD_8FSshaMdn-IGUV4&callback=initMap"></script>
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
     (function() {
@@ -177,6 +156,7 @@
     })();
 
   </script>
+  <script src="/js/jquery.paroller.min.js"></script>
   <script src="/js/tools.js"></script>
   <script src="/js/hamburgers.js"></script>
   <script src="/js/main.js"></script>
