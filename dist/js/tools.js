@@ -67,55 +67,54 @@ $(function () {
 
 
 // Scroll e mudar menu================================================
-$(document).ready(function () {
+// Cache selectors
+var lastId,
+    topMenu = $(".nav-menu"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
 
-	/**
-	 * This part causes smooth scrolling using scrollto.js
-	 * We target all a tags inside the nav, and apply the scrollto.js to it.
-	 */
-	$('a[href^="#"]').click(function (evn) {
-		evn.preventDefault();
-		$('html,body').scrollTo(this.hash, this.hash);
-	});
-
-	/**
-	 * This part handles the highlighting functionality.
-	 * We use the scroll functionality again, some array creation and 
-	 * manipulation, class adding and class removing, and conditional testing
-	 */
-	var aChildren = $("nav li").children(); // find the a children of the list items
-	var aArray = []; // create the empty aArray
-	for (var i = 0; i < aChildren.length; i++) {
-		var aChild = aChildren[i];
-		var ahref = $(aChild).attr('href');
-		aArray.push(ahref);
-	} // this for loop fills the aArray with attribute href values
-
-	$(window).scroll(function () {
-		var windowPos = $(window).scrollTop() + 100; // get the offset of the window from the top of page
-		var windowHeight = $(window).height(); // get the height of the window
-		var docHeight = $(document).height();
-
-		for (var i = 0; i < aArray.length; i++) {
-			var theID = aArray[i];
-			var divPos = $(theID).offset().top; // get the offset of the div from the top of page
-			var divHeight = $(theID).height(); // get the height of the div in question
-			if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
-				$("a[href='" + theID + "']").addClass("nav-active");
-			} else {
-				$("a[href='" + theID + "']").removeClass("nav-active");
-			}
-		}
-
-		if (windowPos + windowHeight == docHeight) {
-			if (!$("nav li:last-child a").hasClass("nav-active")) {
-				var navActiveCurrent = $(".nav-active").attr("href");
-				$("a[href='" + navActiveCurrent + "']").removeClass("nav-active");
-				$("nav li:last-child a").addClass("nav-active");
-			}
-		}
-	});
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+  $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+  }, 300);
+  e.preventDefault();
 });
+
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+   
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+   
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("nav-active")
+         .end().filter("[href='#"+id+"']").parent().addClass("nav-active");
+   }                   
+});
+
+
+
 
 
 
