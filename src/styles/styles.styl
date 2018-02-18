@@ -151,6 +151,15 @@ input:focus, select:focus, textarea:focus, button:focus
         margin 0 30px
         &:first-child
           border-top 1px solid alpha($primary-color, .3)
+          
+      &.nav-active a
+          color $accent-color
+          border 1px solid #ccc
+          font-weight bold
+          border-radius 50px
+          +below(md)
+            border-radius 0
+            border 0
     
       a
         color alpha($primary-color, .5)
@@ -172,14 +181,7 @@ input:focus, select:focus, textarea:focus, button:focus
         &:hover
           color $accent-color
 
-        &.nav-active
-          color $accent-color
-          border 1px solid #ccc
-          font-weight bold
-          border-radius 50px
-          +below(md)
-            border-radius 0
-            border 0
+        
 
 
 

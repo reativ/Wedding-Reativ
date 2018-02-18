@@ -384,6 +384,18 @@ button:focus {
     border-top: 1px solid rgba(74,74,74,0.3);
   }
 }
+.nav-menu-item.nav-active a {
+  color: #442529;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  border-radius: 50px;
+}
+@media only screen and (max-width: 47em) {
+  .nav-menu-item.nav-active a {
+    border-radius: 0;
+    border: 0;
+  }
+}
 .nav-menu-item a {
   color: rgba(74,74,74,0.5);
   letter-spacing: 0.25em;
@@ -411,18 +423,6 @@ button:focus {
 }
 .nav-menu-item a:hover {
   color: #442529;
-}
-.nav-menu-item a.nav-active {
-  color: #442529;
-  border: 1px solid #ccc;
-  font-weight: bold;
-  border-radius: 50px;
-}
-@media only screen and (max-width: 47em) {
-  .nav-menu-item a.nav-active {
-    border-radius: 0;
-    border: 0;
-  }
 }
 .hamburger {
   background: #442529;
