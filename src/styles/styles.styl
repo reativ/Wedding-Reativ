@@ -108,6 +108,14 @@ input:focus, select:focus, textarea:focus, button:focus
   transition .5s
   background #fff
   box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.10)
+  overflow-y scroll
+  
+  +below(md, orientation: portrait)
+    background-image: url(../imgs/flores.png)
+    overflow-y scroll
+    background-position bottom left
+    background-repeat no-repeat
+    
 
 
   +below(md)
@@ -115,9 +123,7 @@ input:focus, select:focus, textarea:focus, button:focus
     transition: transform 0.5s ease;
     height 100%
     top 0
-    background-image: url(../imgs/flores.png);
-    background-position bottom left
-    background-repeat no-repeat
+    
     &:before
       content "Menu"
       @extend h2
@@ -185,23 +191,11 @@ input:focus, select:focus, textarea:focus, button:focus
 
 
 
-.hamburger
-  background $accent-color
-  color red
-  border 1px solid alpha(#fff, 30%)
-  border-radius 50%
-  transition margin-left 250ms ease-in-out
-  position fixed
-  z-index 100
-  bottom 5%
-  right 5%
 
-  +above(lg)
-    display none
 
 // ==== home =======================================================
 .home
-  background-image url(imgs/couple_home.jpg)
+  background-image url(imgs/rsvp2.jpg)
   background-position bottom left
   background-size cover
   background-attachment fixed
@@ -214,7 +208,7 @@ input:focus, select:focus, textarea:focus, button:focus
   
 
 .mask
-  background #000
+  background $accent-color
   height 100%
   width 100%
   opacity .2
@@ -227,18 +221,57 @@ input:focus, select:focus, textarea:focus, button:focus
   width 100%
   position: absolute
   top 50%
-  transform translate(0, -70%)
   & img
-    width 30%
+    width 35%
     align(both)
     +below(md)
       width 80%
+      
+    +below(md, orientation: landscape)
+      width 50%
       
 #particles-js
   position: absolute
   width: 100%
   height: 100%
-  z-index 1      
+  z-index 1     
+  
+  
+.scroll-downs
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  left: 0;
+  margin: auto;
+  width :25px;
+  height: 43px;
+  +below(md, orientation: landscape)
+    display none
+.mousey {
+  width: 3px;
+  padding: 8px 10px;
+  height: 25px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+
+}
+.scroller {
+  width: 3px;
+  height: 8px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
 
 //==== Save the date =======================================================    
     
@@ -348,7 +381,10 @@ option
     margin-top 60px
     clearfix()
     +above(md)
-      padding 0 80px
+      padding 0 120px
+      
+    +between(md, lg)
+      padding 0
     
   &-card
     column(1/2, $cycle: 2, $gutter: 5)
@@ -367,7 +403,7 @@ option
       
     & img
       max-width 100%
-      height 180px
+      height 150px
       padding 40px 60px
       display block
       margin 0 auto
@@ -381,7 +417,7 @@ option
 //==== Map =======================================================
   
 #map
-  height 400px
+  height 450px
   width 100%
 
   
@@ -393,10 +429,8 @@ option
       padding-top 10px
     
   &-section-map
-    
     +above(md)
-      width 80%
-      padding-top 40px
+      width 95%
     
   &-section-adress
     background #fff

@@ -1,37 +1,3 @@
-//Menu Toggle===================================================================
-$(function () {
-	$('.hamburger').click(function (e) {
-		e.stopPropagation();
-		toggleNav();
-	});
-
-	//Ao clicar fora do menu ele se fecha
-	$('#fullpage').click(function (e) {
-		var target = $(e.target);
-		if (!target.closest('#nav').length && $('#nav').hasClass('showNav')) {
-			toggleNav();
-			$("#menuIcon").removeClass("is-active");
-          $("body").removeClass("noscroll");
-		}
-	});
-
-	function toggleNav() {
-		if ($('#nav').hasClass('showNav')) {
-			$('#nav').removeClass('showNav');
-          $('body').removeClass('noscroll');
-		} else {
-			$('#nav').addClass('showNav');
-          $('body').addClass('noscroll');
-		}
-	}
-
-	//Ao clicar no link o menu some
-	$('#nav li').on('click', function () {
-		$("#nav").removeClass("showNav");
-		$("#menuIcon").removeClass("is-active");
-      $("body").removeClass("noscroll");
-	});
-});
 
 //Scroll =======================================================================
 

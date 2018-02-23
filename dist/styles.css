@@ -332,6 +332,15 @@ button:focus {
   transition: 0.5s;
   background: #fff;
   box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.1);
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 47em) and (orientation: portrait) {
+  .nav {
+    background-image: url("../imgs/flores.png");
+    overflow-y: scroll;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+  }
 }
 @media only screen and (max-width: 47em) {
   .nav {
@@ -342,9 +351,6 @@ button:focus {
     transition: transform 0.5s ease;
     height: 100%;
     top: 0;
-    background-image: url("../imgs/flores.png");
-    background-position: bottom left;
-    background-repeat: no-repeat;
   }
   .nav:before {
     content: "Menu";
@@ -424,25 +430,8 @@ button:focus {
 .nav-menu-item a:hover {
   color: #442529;
 }
-.hamburger {
-  background: #442529;
-  color: #f00;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 50%;
-  -webkit-transition: margin-left 250ms ease-in-out;
-  transition: margin-left 250ms ease-in-out;
-  position: fixed;
-  z-index: 100;
-  bottom: 5%;
-  right: 5%;
-}
-@media only screen and (min-width: 47em) {
-  .hamburger {
-    display: none;
-  }
-}
 .home {
-  background-image: url("imgs/couple_home.jpg");
+  background-image: url("imgs/rsvp2.jpg");
   background-position: bottom left;
   background-size: cover;
   background-attachment: fixed;
@@ -465,7 +454,7 @@ button:focus {
   background-image: linear-gradient(to top,rgba(0,0,0,0.3),transparent 50%);
 }
 .mask {
-  background: #000;
+  background: #442529;
   height: 100%;
   width: 100%;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
@@ -479,12 +468,9 @@ button:focus {
   width: 100%;
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(0, -70%);
-  -ms-transform: translate(0, -70%);
-  transform: translate(0, -70%);
 }
 .nomes img {
-  width: 30%;
+  width: 35%;
   position: absolute;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -499,11 +485,55 @@ button:focus {
     width: 80%;
   }
 }
+@media only screen and (max-width: 47em) and (orientation: landscape) {
+  .nomes img {
+    width: 50%;
+  }
+}
 #particles-js {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+.scroll-downs {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  left: 0;
+  margin: auto;
+  width: 25px;
+  height: 43px;
+}
+@media only screen and (max-width: 47em) and (orientation: landscape) {
+  .scroll-downs {
+    display: none;
+  }
+}
+.mousey {
+  width: 3px;
+  padding: 8px 10px;
+  height: 25px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+  filter: alpha(opacity=75);
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 8px;
+  border-radius: 25%;
+  background-color: #fff;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+  -webkit-animation-duration: 2.2s;
+  animation-duration: 2.2s;
+  -webkit-animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 .data {
   text-align: center;
@@ -665,7 +695,12 @@ option {
 }
 @media only screen and (min-width: 41em) {
   .gift-row {
-    padding: 0 80px;
+    padding: 0 120px;
+  }
+}
+@media only screen and (min-width: 41em) and (max-width: 68em) {
+  .gift-row {
+    padding: 0;
   }
 }
 .gift-card {
@@ -728,7 +763,7 @@ option {
 }
 .gift-card img {
   max-width: 100%;
-  height: 180px;
+  height: 150px;
   padding: 40px 60px;
   display: block;
   margin: 0 auto;
@@ -739,7 +774,7 @@ option {
   transition: 0.4s;
 }
 #map {
-  height: 400px;
+  height: 450px;
   width: 100%;
 }
 .map-row {
@@ -753,8 +788,7 @@ option {
 }
 @media only screen and (min-width: 41em) {
   .map-section-map {
-    width: 80%;
-    padding-top: 40px;
+    width: 95%;
   }
 }
 .map-section-adress {
@@ -777,4 +811,96 @@ option {
   display: block;
   line-height: 25px;
   padding-bottom: 40px;
+}
+@-moz-keyframes scroll {
+  0% {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -ms-filter: none;
+    filter: none;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes scroll {
+  0% {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -ms-filter: none;
+    filter: none;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+@-o-keyframes scroll {
+  0% {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -ms-filter: none;
+    filter: none;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+@keyframes scroll {
+  0% {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -ms-filter: none;
+    filter: none;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
 }
