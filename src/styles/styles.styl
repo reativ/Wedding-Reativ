@@ -99,46 +99,36 @@ input:focus, select:focus, textarea:focus, button:focus
 // ==== Nav =======================================================
 .nav
   position fixed
-  top -80
+  top 0
   left 0
   width 100%
   height: auto
-  color $primary-color
+  color #fff
   z-index 90
   transition .5s
-  background #fff
+  background transparent
+  border-bottom 1px solid rgba(255, 255, 255, 0.19)
   box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.10)
-  overflow-y scroll
   
-  +below(md, orientation: portrait)
-    background-image: url(../imgs/flores.png)
-    overflow-y scroll
-    background-position bottom left
-    background-repeat no-repeat
-    
-
-
   +below(md)
-    transform translate3d(0,1000px,0)
+    transform translate3d(0,-300px,0)
     transition: transform 0.5s ease;
-    height 100%
-    top 0
-    
-    &:before
-      content "Menu"
-      @extend h2
-      text-align center
-      width 100%
-      padding 20px 0
-      position relative
-      display block
-      top 0
-      left 0
-      
+  
 
   &.scroll
-    top 0
+    background #fff
+    color $primary-color
+    
+    & a
+      color alpha($primary-color, .5)
+      &:hover
+          color $accent-color
+        
+    
+    & .nav-active a
+      color $accent-color
 
+    
   &.showNav
     transform translate3d(0,0,0)
 
@@ -151,15 +141,9 @@ input:focus, select:focus, textarea:focus, button:focus
     &-item
       display inline-block
       margin 10px 5px
-      +below(md)
-        display block
-        border-bottom 1px solid alpha($primary-color, .3)
-        margin 0 30px
-        &:first-child
-          border-top 1px solid alpha($primary-color, .3)
           
       &.nav-active a
-          color $accent-color
+          color #fff
           border 1px solid #ccc
           font-weight bold
           border-radius 50px
@@ -168,7 +152,7 @@ input:focus, select:focus, textarea:focus, button:focus
             border 0
     
       a
-        color alpha($primary-color, .5)
+        color alpha(#fff, .5)
         letter-spacing 0.25em
         text-decoration none
         text-transform uppercase
@@ -177,15 +161,11 @@ input:focus, select:focus, textarea:focus, button:focus
         display inline-block
         position relative
         padding 15px 20px
-        +above(md)
-          border 1px solid #fff
-        +below(md)
-          display block
-          text-align center
-          padding 30px
+        border 1px solid rgba(255, 255, 255, 0)
+
 
         &:hover
-          color $accent-color
+          color #fff
 
         
 
@@ -195,8 +175,8 @@ input:focus, select:focus, textarea:focus, button:focus
 
 // ==== home =======================================================
 .home
-  background-image url(imgs/rsvp2.jpg)
-  background-position bottom left
+  background-image url(imgs/home1.jpg)
+  background-position bottom right
   background-size cover
   background-attachment fixed
   height: 100%
@@ -211,7 +191,7 @@ input:focus, select:focus, textarea:focus, button:focus
   background $accent-color
   height 100%
   width 100%
-  opacity .2
+  opacity .3
   position absolute
   top 0
   left 0
@@ -237,41 +217,34 @@ input:focus, select:focus, textarea:focus, button:focus
   z-index 1     
   
   
-.scroll-downs
+.downArrow
   position: absolute;
   right: 0;
-  bottom: 30px;
+  bottom: 40px;
   left: 0;
   margin: auto;
-  width :25px;
-  height: 43px;
+  width :15px;
+  height: 15px;
   +below(md, orientation: landscape)
     display none
-.mousey {
-  width: 3px;
-  padding: 8px 10px;
-  height: 25px;
-  border: 1px solid #fff;
-  border-radius: 25px;
-  opacity: 0.75;
-  box-sizing: content-box;
-
+    
+.bounce {
+	-moz-animation: bounce 3s infinite;
+	-webkit-animation: bounce 3s infinite;
+	animation: bounce 3s infinite;
 }
-.scroller {
-  width: 3px;
-  height: 8px;
-  border-radius: 25%;
-  background-color: #fff;
-  animation-name: scroll;
-  animation-duration: 2.2s;
-  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
-  animation-iteration-count: infinite;
-}
-@keyframes scroll {
+@keyframes bounce {
   0% { opacity: 0; }
   10% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(15px); opacity: 0;}
 }
+  
+  
+  
+  
+  
+  
+ 
 
 //==== Save the date =======================================================    
     
@@ -429,8 +402,10 @@ option
       padding-top 10px
     
   &-section-map
+    padding-top 30px
     +above(md)
       width 95%
+      padding-top 60px
     
   &-section-adress
     background #fff

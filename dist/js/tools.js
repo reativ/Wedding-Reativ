@@ -143,12 +143,6 @@ myform.submit(function (event) {
 
 
 
-// parallax ==========================================
- $("[data-paroller-factor]").paroller({
-   type: 'foreground',
- });
-
-
 
 // mapa ======================================================
 
