@@ -218,8 +218,7 @@ body.noscroll {
 *:after {
   box-sizing: inherit;
 }
-h2,
-.nav:before {
+h2 {
   color: #442529;
   font-family: 'Great Vibes', cursive;
   font-size: 60px;
@@ -322,43 +321,39 @@ button:focus {
 }
 .nav {
   position: fixed;
-  top: -80;
+  top: 0;
   left: 0;
   width: 100%;
   height: auto;
-  color: #4a4a4a;
+  color: #fff;
   z-index: 90;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  background: #fff;
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.19);
   box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.1);
 }
 @media only screen and (max-width: 47em) {
   .nav {
-    -webkit-transform: translate3d(0, 1000px, 0);
-    -ms-transform: translate3d(0, 1000px, 0);
-    transform: translate3d(0, 1000px, 0);
+    -webkit-transform: translate3d(0, -300px, 0);
+    -ms-transform: translate3d(0, -300px, 0);
+    transform: translate3d(0, -300px, 0);
     -webkit-transition: transform 0.5s ease;
     transition: transform 0.5s ease;
-    height: 100%;
-    top: 0;
-    background-image: url("../imgs/flores.png");
-    background-position: bottom left;
-    background-repeat: no-repeat;
-  }
-  .nav:before {
-    content: "Menu";
-    text-align: center;
-    width: 100%;
-    padding: 20px 0;
-    position: relative;
-    display: block;
-    top: 0;
-    left: 0;
   }
 }
 .nav.scroll {
-  top: 0;
+  background: #fff;
+  color: #4a4a4a;
+}
+.nav.scroll a {
+  color: rgba(74,74,74,0.5);
+}
+.nav.scroll a:hover {
+  color: #442529;
+}
+.nav.scroll .nav-active a {
+  color: #442529;
 }
 .nav.showNav {
   -webkit-transform: translate3d(0, 0, 0);
@@ -374,18 +369,8 @@ button:focus {
   display: inline-block;
   margin: 10px 5px;
 }
-@media only screen and (max-width: 47em) {
-  .nav-menu-item {
-    display: block;
-    border-bottom: 1px solid rgba(74,74,74,0.3);
-    margin: 0 30px;
-  }
-  .nav-menu-item:first-child {
-    border-top: 1px solid rgba(74,74,74,0.3);
-  }
-}
 .nav-menu-item.nav-active a {
-  color: #442529;
+  color: #fff;
   border: 1px solid #ccc;
   font-weight: bold;
   border-radius: 50px;
@@ -397,7 +382,7 @@ button:focus {
   }
 }
 .nav-menu-item a {
-  color: rgba(74,74,74,0.5);
+  color: rgba(255,255,255,0.5);
   letter-spacing: 0.25em;
   text-decoration: none;
   text-transform: uppercase;
@@ -408,42 +393,14 @@ button:focus {
   display: inline-block;
   position: relative;
   padding: 15px 20px;
-}
-@media only screen and (min-width: 41em) {
-  .nav-menu-item a {
-    border: 1px solid #fff;
-  }
-}
-@media only screen and (max-width: 47em) {
-  .nav-menu-item a {
-    display: block;
-    text-align: center;
-    padding: 30px;
-  }
+  border: 1px solid rgba(255,255,255,0);
 }
 .nav-menu-item a:hover {
-  color: #442529;
-}
-.hamburger {
-  background: #442529;
-  color: #f00;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 50%;
-  -webkit-transition: margin-left 250ms ease-in-out;
-  transition: margin-left 250ms ease-in-out;
-  position: fixed;
-  z-index: 100;
-  bottom: 5%;
-  right: 5%;
-}
-@media only screen and (min-width: 47em) {
-  .hamburger {
-    display: none;
-  }
+  color: #fff;
 }
 .home {
-  background-image: url("imgs/couple_home.jpg");
-  background-position: bottom left;
+  background-image: url("imgs/home1.jpg");
+  background-position: bottom right;
   background-size: cover;
   background-attachment: fixed;
   height: 100%;
@@ -465,12 +422,12 @@ button:focus {
   background-image: linear-gradient(to top,rgba(0,0,0,0.3),transparent 50%);
 }
 .mask {
-  background: #000;
+  background: #442529;
   height: 100%;
   width: 100%;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-  filter: alpha(opacity=20);
-  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  opacity: 0.3;
   position: absolute;
   top: 0;
   left: 0;
@@ -479,12 +436,9 @@ button:focus {
   width: 100%;
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(0, -70%);
-  -ms-transform: translate(0, -70%);
-  transform: translate(0, -70%);
 }
 .nomes img {
-  width: 30%;
+  width: 35%;
   position: absolute;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -499,11 +453,36 @@ button:focus {
     width: 80%;
   }
 }
+@media only screen and (max-width: 47em) and (orientation: landscape) {
+  .nomes img {
+    width: 50%;
+  }
+}
 #particles-js {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+.downArrow {
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+  left: 0;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+}
+@media only screen and (max-width: 47em) and (orientation: landscape) {
+  .downArrow {
+    display: none;
+  }
+}
+.bounce {
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
 }
 .data {
   text-align: center;
@@ -665,7 +644,12 @@ option {
 }
 @media only screen and (min-width: 41em) {
   .gift-row {
-    padding: 0 80px;
+    padding: 0 120px;
+  }
+}
+@media only screen and (min-width: 41em) and (max-width: 68em) {
+  .gift-row {
+    padding: 0;
   }
 }
 .gift-card {
@@ -728,7 +712,7 @@ option {
 }
 .gift-card img {
   max-width: 100%;
-  height: 180px;
+  height: 150px;
   padding: 40px 60px;
   display: block;
   margin: 0 auto;
@@ -739,7 +723,7 @@ option {
   transition: 0.4s;
 }
 #map {
-  height: 400px;
+  height: 450px;
   width: 100%;
 }
 .map-row {
@@ -751,10 +735,13 @@ option {
     padding-top: 10px;
   }
 }
+.map-section-map {
+  padding-top: 30px;
+}
 @media only screen and (min-width: 41em) {
   .map-section-map {
-    width: 80%;
-    padding-top: 40px;
+    width: 95%;
+    padding-top: 60px;
   }
 }
 .map-section-adress {
@@ -777,4 +764,96 @@ option {
   display: block;
   line-height: 25px;
   padding-bottom: 40px;
+}
+@-moz-keyframes bounce {
+  0% {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -ms-filter: none;
+    filter: none;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -ms-filter: none;
+    filter: none;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+@-o-keyframes bounce {
+  0% {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -ms-filter: none;
+    filter: none;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+@keyframes bounce {
+  0% {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -ms-filter: none;
+    filter: none;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    transform: translateY(15px);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
 }
