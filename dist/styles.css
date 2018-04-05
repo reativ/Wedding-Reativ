@@ -438,7 +438,7 @@ button:focus {
   top: 50%;
 }
 .nomes img {
-  width: 35%;
+  width: 36%;
   position: absolute;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -553,7 +553,7 @@ button:focus {
 }
 .accent-bg {
   background-color: #442529;
-  background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+  background-image: url("imgs/brilliant.png");
   position: relative;
 }
 .accent-bg:before {
