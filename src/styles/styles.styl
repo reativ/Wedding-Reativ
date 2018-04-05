@@ -69,7 +69,7 @@ input:focus, select:focus, textarea:focus, button:focus
     width 100%
     
   &-primary
-    border 1px solid #fff
+    border 2px solid #fff
     background transparent
     color #fff
     &:focus, &:hover
@@ -77,7 +77,7 @@ input:focus, select:focus, textarea:focus, button:focus
       color $accent-color
       
   &-secondary
-    border 1px solid $accent-color
+    border 2px solid $accent-color
     background #fff
     color $primary-color
     &:focus, &:hover
@@ -312,7 +312,9 @@ input:focus, select:focus, textarea:focus, button:focus
       background alpha(#fff, .2)
     &:after
       background alpha(#fff, .3)
-
+input.form-control::placeholder
+  color alpha(#fff, 30%)
+  
 .form-control
   display block
   width 100%
@@ -398,7 +400,6 @@ option
   &-row
     padding-bottom 30px
     +above(md)
-      padding-bottom 60px
       padding-top 10px
     
   &-section-map
@@ -425,6 +426,23 @@ option
   display block
   line-height: 25px
   padding-bottom: 40px
+  
+  
+.quote
+  color #fff
+  text-align center
+  padding 40px
+  border-top 1px solid alpha(#fff, .2)
+  background alpha(#000, .2)
+  font-size 26px
+  font-family $cursive-font
+  
+.verse
+  display block
+  font-family $font
+  font-size 14px
+  font-weight 100
+  margin-top 10px
 
 
     

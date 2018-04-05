@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Juliana e Rafael</title>
-  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="Site de casamento oficial de Juliana e Rafael">
   <link rel="stylesheet" href="styles.css">
 <link rel="apple-touch-icon" sizes="180x180" href="/imgs/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon/favicon-32x32.png">
@@ -80,27 +80,32 @@
         <h2>Confirmação</h2>
         <form id="myform">
           <div class="contact-item">
-            <label class="contact-label" for="name">Nome completo:</label>
-            <input type="text" id="name" name="from_name" class="form-control">
+            <label class="contact-label" for="name">Seu nome completo*:</label>
+            <input type="text" id="name" name="from_name" class="form-control" placeholder="Ex: Juliana Alves">
 
           </div>
           <div class="contact-item">
-            <label class="contact-label" for="email">E-mail:</label>
-            <input type="email" id="email" name="from_email" class="form-control">
+            <label class="contact-label" for="email">E-mail*:</label>
+            <input type="email" id="email" name="from_email" class="form-control" placeholder="email@email.com">
 
           </div>
           <div class="contact-item">
-            <label for="exampleFormControlSelect1">Número de pessoas</label>
+            <label for="exampleFormControlSelect1">Número de pessoas*</label>
             <select class="form-control" name="pessoas" class="form-control">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
                   <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
           </select>
           </div>
           <div class="contact-item">
-            <label class="contact-label" for="message">Mensagem:</label>
+            <label class="contact-label" for="message">Mensagem aos noivos (opcional)</label>
             <textarea id="message" name="message_html" class="form-control"></textarea>
 
           </div>
@@ -114,7 +119,8 @@
 
     <div class="section-margin" id="lista">
       <h2>Lista de presentes</h2>
-      <p class="gift-text">Suspendisse nec dui ut turpis posuere sagittis viverra tincidunt lectus. Sed faucibus tristique purus, ac mattis lorem malesuada vel. Sed dignissim, orci eu porttitor suscipit, dolor mauris elementum dolor, eget posuere dui ante vel quam. Donec ut lacinia est, et convallis augue.</p>
+      <p class="gift-text">Nosso maior presente é a sua presença no nosso grande dia.<br>
+Mas para aqueles que queiram nos presentear com algum mimo, deixamos abaixo algumas sugestões.</p>
 
       <div class="gift-row">
 
@@ -152,6 +158,9 @@
           </div>
         </div>
 
+      </div>
+      <div class="quote">"Acima de tudo isto, porém, esteja o amor, que é o vínculo da perfeição."
+      <span class="verse">Colessenses 3:14</span>
       </div>
     </div>
   </div>
