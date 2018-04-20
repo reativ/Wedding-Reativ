@@ -354,6 +354,7 @@ button:focus {
 }
 .nav.scroll .nav-active a {
   color: #442529;
+  border: 1px solid #ccc;
 }
 .nav.showNav {
   -webkit-transform: translate3d(0, 0, 0);
@@ -371,7 +372,7 @@ button:focus {
 }
 .nav-menu-item.nav-active a {
   color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   font-weight: bold;
   border-radius: 50px;
 }
@@ -382,7 +383,7 @@ button:focus {
   }
 }
 .nav-menu-item a {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.7);
   letter-spacing: 0.25em;
   text-decoration: none;
   text-transform: uppercase;
@@ -438,7 +439,7 @@ button:focus {
   top: 50%;
 }
 .nomes img {
-  width: 36%;
+  width: 34%;
   position: absolute;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -612,6 +613,9 @@ input.form-control::placeholder {
 option {
   background: #442529;
 }
+select.form-control:not([size]):not([multiple]) {
+  height: 49px;
+}
 .error {
   color: #fa4040;
   padding: 15px;
@@ -647,7 +651,7 @@ option {
 }
 @media only screen and (min-width: 41em) {
   .gift-row {
-    padding: 0 120px;
+    padding: 0 60px;
   }
 }
 @media only screen and (min-width: 41em) and (max-width: 68em) {
@@ -659,15 +663,15 @@ option {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 47.5%;
+  width: 45%;
   margin-left: 0%;
-  margin-right: 5%;
+  margin-right: 10%;
   margin-bottom: 20px;
   -webkit-transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 1px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 25px rgba(0,0,0,0.1);
 }
 .gift-card:before,
 .gift-card:after {
@@ -678,7 +682,7 @@ option {
   clear: both;
 }
 .gift-card:nth-child(n) {
-  margin-right: 5%;
+  margin-right: 10%;
   float: left;
   clear: none;
 }
@@ -706,7 +710,7 @@ option {
   }
 }
 .gift-card:hover {
-  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
 }
 .gift-card:hover img {
   -ms-filter: none;
