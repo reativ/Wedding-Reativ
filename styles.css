@@ -686,11 +686,11 @@ select.form-control:not([size]):not([multiple]) {
   float: left;
   clear: none;
 }
-.gift-card:nth-child(2n) {
+.gift-card:nth-child(3n) {
   margin-right: 0%;
   float: right;
 }
-.gift-card:nth-child(2n + 1) {
+.gift-card:nth-child(3n + 1) {
   clear: both;
 }
 @media only screen and (max-width: 47em) {
@@ -707,6 +707,14 @@ select.form-control:not([size]):not([multiple]) {
   }
   .gift-card:last-child {
     margin-right: auto;
+  }
+  .gift-card.linkDesk {
+    display: none;
+  }
+}
+@media only screen and (min-width: 41em) {
+  .gift-card.linkMobile {
+    display: none;
   }
 }
 .gift-card:hover {
