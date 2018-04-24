@@ -366,7 +366,7 @@ select.form-control:not([size]):not([multiple])
       padding 0
     
   &-card
-    column(1/2, $cycle: 2, $gutter: 10)
+    column(1/2, $cycle: 3, $gutter: 10)
     margin-bottom 20px
     transition: all 0.6s cubic-bezier(.25,.8,.25,1);
     background #fff
@@ -374,6 +374,15 @@ select.form-control:not([size]):not([multiple])
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
     +below(md)
       stack()
+      
+      &.linkDesk
+        display none
+        
+    +above(md)
+      &.linkMobile
+        display none
+      
+      
       
     &:hover
       box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
