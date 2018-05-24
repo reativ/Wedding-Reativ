@@ -107,8 +107,7 @@ myform.submit(function (event) {
 
 	var emailaddressVal = $("#email").val();
 	var nameVal = $("#name").val();
-	var messageVal = $("#message").val();
-	if (nameVal == '' || messageVal == '' || emailaddressVal == '') {
+	if (nameVal == '' || emailaddressVal == '') {
 		$(".error").remove();
 		$("#send").before('<span class="error">Por favor, preencha todos os campos.</span>');
 		hasError = true;
